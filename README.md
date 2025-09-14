@@ -26,3 +26,10 @@ For the UI, I used **CSS with the same color combination from my current project
 - Plain CSS for UI Design, theming, and also for responsiveness as no particular specifications are there.
 - @hello-pangea/dnd for drag and drop
 - date-fns for date formatting
+
+## How to run it-
+
+clone the repositary or download the zip folder
+cd mini kanban
+npm install
+npm run dev
