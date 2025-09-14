@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --bg: #111111;
+  --panel: #121a33;
+  --card: #182246;
+  --text: #e8edff;
+  --muted: #a9b2d0;
+  --accent: #6ea8fe;
+  --ring: #264ad9;
+  --border: #273462;
+}
+
+.light {
+  --bg: #f5f5f5;
+  --panel: #ffffff;
+  --card: #ffffff;
+  --text: #0e1230;
+  --muted: #5b617a;
+  --accent: #3056d3;
+  --ring: #9ab5ff;
+  --border: #555;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: DM Sans, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+button,
+input,
+select,
+textarea {
+  font: DM Sans;
+  color: inherit;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+}
+.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.col {
+  flex: 1;
+  min-width: 260px;
+}
+.section-title {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.icon-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.icon-btn:hover {
+  border-color: var(--ring);
+}
+
+.progress {
+  height: 10px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #67e8f9);
+}
+
+.task {
+  padding: 12px;
+}
+.task h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+.badge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.badge.high {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+.badge.medium {
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+.badge.low {
+  border-color: #22c55e;
+  color: #22c55e;
+}
+.hr {
+  height: 1px;
+  background: var(--border);
+  border: 0;
+  margin: 12px 0;
+}
