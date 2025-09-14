@@ -18,21 +18,21 @@ export default function Column({ id, title }: { id: ColumnId; title: string }) {
             <Droppable droppableId={id}>
                 {(provided) => (
                     <div ref={provided.innerRef} {...provided.droppableProps} style={{ minHeight: 40 }}>
-                        {tasks.map((t, idx) => (
-                            <Draggable key={t.id} draggableId={t.id} index={idx}>
-                                {(prov, snapshot) => (
+                        {tasks.map((task, idx) => (
+                            <Draggable key={task.id} draggableId={task.id} index={idx}>
+                                {(provided, snapshot) => (
                                     <div
-                                        ref={prov.innerRef}
-                                        {...prov.draggableProps}
-                                        {...prov.dragHandleProps}
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        {...provided.dragHandleProps}
                                         className="card task"
                                         style={{
                                             marginBottom: 10,
                                             boxShadow: snapshot.isDragging ? '0 0 0 2px var(--ring) inset' : undefined,
-                                            ...prov.draggableProps.style
+                                            ...provided.draggableProps.style
                                         }}
                                     >
-                                        <TaskCard task={t} />
+                                        <TaskCard task={task} />
                                     </div>
                                 )}
                             </Draggable>

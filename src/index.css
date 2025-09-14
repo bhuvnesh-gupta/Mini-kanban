@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --bg: #111111;
-  --panel: #121a33;
-  --card: #182246;
-  --text: #e8edff;
+  --bg:'background': #000;
+background: radial-gradient(circle,rgb(0, 0, 0) 65%, #010105 100%);
+  --panel: #030303;
+  --card: #050505;
+  --text: #dddddd;
   --muted: #a9b2d0;
   --accent: #6ea8fe;
-  --ring: #264ad9;
-  --border: #273462;
+  --ring: #ddd;
+  --border: #333333;
 }
 
 .light {
@@ -18,7 +19,7 @@
   --text: #0e1230;
   --muted: #5b617a;
   --accent: #3056d3;
-  --ring: #9ab5ff;
+  --ring: #56658f;
   --border: #555;
 }
 
@@ -45,7 +46,7 @@ textarea {
   color: inherit;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 16px;
 }
@@ -62,6 +63,7 @@ textarea {
 .input,
 .select,
 .textarea {
+  margin-top: 6px;
   width: 100%;
   padding: 10px 12px;
   background: var(--card);
@@ -69,6 +71,7 @@ textarea {
   border-radius: 10px;
   color: var(--text);
 }
+
 .row {
   display: flex;
   gap: 16px;
@@ -92,10 +95,16 @@ textarea {
 }
 .icon-btn:hover {
   border-color: var(--ring);
+  scale: 1.05;
+}
+
+.delete:hover {
+  border: 1px solid red;
+  color: red;
 }
 
 .progress {
-  height: 10px;
+  height: 16px;
   background: var(--border);
   border-radius: 999px;
   overflow: hidden;
@@ -121,14 +130,17 @@ textarea {
   color: var(--muted);
 }
 .badge.high {
+  font-weight: 700;
   border-color: #ef4444;
   color: #ef4444;
 }
 .badge.medium {
+  font-weight: 700;
   border-color: #f59e0b;
   color: #f59e0b;
 }
 .badge.low {
+  font-weight: 700;
   border-color: #22c55e;
   color: #22c55e;
 }

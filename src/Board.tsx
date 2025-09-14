@@ -31,9 +31,9 @@ export default function Board() {
     return (
         <DragDropContext onDragEnd={onDragEnd}>
             <div className="row">
-                {columns.map((c) => (
-                    <div key={c.id} className="col">
-                        <Column id={c.id} title={c.title} />
+                {columns.map((col) => (
+                    <div key={col.id} className="col">
+                        <Column id={col.id} title={col.title} />
                     </div>
                 ))}
             </div>

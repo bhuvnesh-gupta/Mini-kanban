@@ -185,5 +185,9 @@ export const selectColumnTasks =
 export const selectCounts = (select: { board: BoardState }) => {
   const total = Object.keys(select.board.tasks).length;
   const done = select.board.columns.done.length;
-  return { total, done, pct: total ? Math.round((done / total) * 100) : 0 };
+  return {
+    total,
+    done,
+    percentage: total ? Math.round((done / total) * 100) : 0,
+  };
 };

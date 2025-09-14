@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useAppDispatch } from './hooks';
 import { addTask, updateTask } from './tasksSlice';
 import type { ColumnId, Priority, Task } from './types';
+import { MdAdd, MdEdit } from 'react-icons/md';
 
 type CreateMode = { mode: 'create'; initial: { column: ColumnId } };
 type EditMode = { mode: 'edit'; initial: { task: Task } };
@@ -54,8 +55,8 @@ export default function TaskForm(props: Props) {
 
     return (
         <>
-            <button className="icon-btn" onClick={() => setOpen(true)}>
-                {isEdit ? '✏️' : '＋'}
+            <button className="icon-btn edit " onClick={() => setOpen(true)}>
+                {isEdit ? <MdEdit /> : <MdAdd />}
             </button>
 
             {open && (
@@ -67,7 +68,7 @@ export default function TaskForm(props: Props) {
                     onClick={() => setOpen(false)}
                 >
                     <form
-                        className="panel"
+                        className="card"
                         style={{ padding: 16, width: 380, maxWidth: '90vw' }}
                         onClick={(e) => e.stopPropagation()}
                         onSubmit={submit}
@@ -100,7 +101,7 @@ export default function TaskForm(props: Props) {
                         </div>
 
                         <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', marginTop: 12 }}>
-                            <button className="icon-btn" type="button" onClick={() => setOpen(false)}>Cancel</button>
+                            <button className="icon-btn delete" type="button" onClick={() => setOpen(false)}>Cancel</button>
                             <button className="icon-btn" type="submit">{isEdit ? 'Save' : 'Add'}</button>
                         </div>
                     </form>

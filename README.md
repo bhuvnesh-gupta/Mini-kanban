@@ -1,69 +1,28 @@
-# React + TypeScript + Vite
+# Mini Kanban Board (React + redux + css)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a small Kanban board fully responsive app I built using **React, TypeScript, Redux Toolkit and CSS for Designing**.  
+It’s meant to show how I work with modern React tools, state management, and drag-and-drop.  
+For the UI, I used **CSS with the same color combination from my current project** so it looks familiar and consistent.
 
-Currently, two official plugins are available:
+## What it can do
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Three columns: **Todo**, **In Progress**, and **Done**
+- Add tasks with a title, description, priority, and due date
+- Edit or delete existing tasks
+- Drag and drop tasks between columns
+- Filter tasks (all, high priority, due today)
+- Sort tasks in each column (by due date or priority)
+- Search tasks by title
+- Progress bar that shows how many tasks are done
+- Dark mode toggle
+- Saves everything in **localStorage**, so tasks don’t disappear on refresh
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies used-
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- React + TypeScript
+- Redux Toolkit for state
+- Plain CSS for UI Design, theming, and also for responsiveness as no particular specifications are there.
+- @hello-pangea/dnd for drag and drop
+- date-fns for date formatting
